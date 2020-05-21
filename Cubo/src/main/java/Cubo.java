@@ -1,8 +1,9 @@
+
 import java.util.Scanner;
 
 
-public class Cuadrado {
-    public static void main(String[]args){
+public class Cubo {
+        public static void main(String[]args){
         
         double L1 = 0;
         
@@ -17,6 +18,5 @@ public class Cuadrado {
         
         
     }
-    
     
 }
