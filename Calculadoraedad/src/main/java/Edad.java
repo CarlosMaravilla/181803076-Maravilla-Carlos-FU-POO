@@ -9,7 +9,7 @@ public class Edad {
         
         int anio=0,Fecha=2020;
         Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese un numero");
+        System.out.println("Ingrese  tu anio de nacimiento");
         
         anio = leer.nextInt();
      
