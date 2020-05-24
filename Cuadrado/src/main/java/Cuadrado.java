@@ -7,11 +7,11 @@ public class Cuadrado {
         double L1 = 0;
         
         Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese un numero");
+        System.out.println("Ingrese la medida del lado del cuadrado");
         
          L1 = leer.nextDouble();
         
-        System.out.println("El area es "+(L1*L1*L1));
+        System.out.println("El area es "+(L1*L1));
         
         
         
