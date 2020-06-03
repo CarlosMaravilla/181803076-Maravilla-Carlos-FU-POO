@@ -10,8 +10,11 @@ public class JuegoMain {
          bronce.danio=10;
          bronce.velocidadDisparo=10;
          System.out.println(bronce.toString());
+         System.out.println(bronce.disparar());
          
          AK plata=new AK();
+         
+         
          plata.tipo="Plata";
          plata.cargador=8;
          plata.precision=70;
