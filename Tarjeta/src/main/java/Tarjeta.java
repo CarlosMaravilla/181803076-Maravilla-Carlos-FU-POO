@@ -50,6 +50,21 @@ public class Tarjeta {
             
         
     }
+    
+    public  int validar(double a){
+        if(a> this.monto){
+            
+            return 0;
+        }else{
+            return 1;
+            
+            
+       } 
+        
+                
+    }
+    
+    
     //Este metodo crear el apartado 
     public void crearapartado(double apartado){
         this.monto =this.monto-apartado;
@@ -66,9 +81,10 @@ public class Tarjeta {
         this.monto +=monto;
     }
     
+ 
     //Este metodo hace el retiro
-    public void retiro(double monto){
-        this.monto -=monto;
+    public void retiro(double retiro){
+        this.monto =this.monto - retiro;
     }
     
     
@@ -82,6 +98,10 @@ public class Tarjeta {
     @Override
     public String toString() {
         return "\n nocuenta:" + nocuenta + "\n nombre:" + nombre + "\n Fecha:"+ dia + "/" + mes + "/" + anio + "\n cv:" + cv + "\n monto:" + monto + "\n apartado:" + apartado+"\nTotal:"+this.Total();
+    }
+
+    int validarretiro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
    

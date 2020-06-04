@@ -6,6 +6,7 @@ public class Maintarjeta {
     
     public static void main(String[] args){
        
+        double retiro;
         //Avisando al programa que usare un objeto tajeta 
         Tarjeta tarjeta;
         
@@ -44,20 +45,36 @@ public class Maintarjeta {
             
             case 2:
                 System.out.println("Ingrese la cantidad  a retirar de la cuenta "+tarjeta.nocuenta);
-                tarjeta.retiro(leer.nextDouble()); 
+                retiro=leer.nextDouble(); 
+                tarjeta.validar(retiro); 
+                if(tarjeta.validar(retiro)==0){
+                    System.out.println("Monto insuficiente");
+                }else{
+                   tarjeta.retiro(retiro);
+                }
                 System.out.println("Ahora su cuenta tiene: $"+tarjeta.monto);
                 break;
             case 3:
-                if(tarjeta.apartado!=0){
+                if(tarjeta.apartado!=0 ){
                     System.out.println("Usted elimino su apartado");
                     tarjeta.eliminarapartado();
                     System.out.println("Ahora su cuenta tiene: $"+tarjeta.monto); 
                 }else{
+                    
                     System.out.println("Usted cuenta con "+tarjeta.monto+" en su cuenta");
                     System.out.println("¿Cuanto desea apartar?");
+                    retiro=leer.nextDouble();
+                    if(tarjeta.validar(retiro)==0){
+                    System.out.println("Monto insuficiente");
+                    }else{
+                   
+                   
                     tarjeta.crearapartado(leer.nextDouble());
                     System.out.println("Se ha creado correctamente su apartado");
                     System.out.println("Ahora su cuenta tiene $"+tarjeta.monto+" y "+tarjeta.apartado+" de apartado");
+                    
+                    }
+                    
                 }
                 break;
             case 4:
