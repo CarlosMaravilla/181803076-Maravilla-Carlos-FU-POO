@@ -51,8 +51,9 @@ public class Maintarjeta {
                     System.out.println("Monto insuficiente");
                 }else{
                    tarjeta.retiro(retiro);
+                   System.out.println("Ahora su cuenta tiene: $"+tarjeta.monto);
                 }
-                System.out.println("Ahora su cuenta tiene: $"+tarjeta.monto);
+                
                 break;
             case 3:
                 if(tarjeta.apartado!=0 ){
@@ -64,12 +65,14 @@ public class Maintarjeta {
                     System.out.println("Usted cuenta con "+tarjeta.monto+" en su cuenta");
                     System.out.println("¿Cuanto desea apartar?");
                     retiro=leer.nextDouble();
-                    if(tarjeta.validar(retiro)==0){
+                    
+                    if(tarjeta.validar(retiro)>tarjeta.monto){
+                    
                     System.out.println("Monto insuficiente");
                     }else{
                    
                    
-                    tarjeta.crearapartado(leer.nextDouble());
+                    tarjeta.crearapartado(retiro);
                     System.out.println("Se ha creado correctamente su apartado");
                     System.out.println("Ahora su cuenta tiene $"+tarjeta.monto+" y "+tarjeta.apartado+" de apartado");
                     
