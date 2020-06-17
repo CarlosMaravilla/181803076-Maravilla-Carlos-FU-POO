@@ -9,13 +9,14 @@ public class Tarjeta {
     int cv;
     double monto;
     double apartado;
+    double apartado1;
     
     //Este es nuestro metodo vacio
     public Tarjeta(){
         
     }
     //Este es nuestro metodo completo
-    public Tarjeta(int nocuenta,int nip, String nombre, int dia , int mes ,int anio,int cv, double monto, double apartado ){
+    public Tarjeta(int nocuenta,int nip, String nombre, int dia , int mes ,int anio,int cv, double monto, double apartado,double apartado1){
         
       this.nocuenta=nocuenta;
       this.nombre=nombre;
@@ -25,6 +26,8 @@ public class Tarjeta {
       this.cv=cv;
       this.monto=monto;
       this.apartado=apartado;
+      this.apartado1=apartado1;
+      
     }
 
     //1 public no le haremos caso
@@ -35,13 +38,13 @@ public class Tarjeta {
     public  Tarjeta verificarCuenta(int nCuenta, int NIP){
         if(nCuenta == 123123 && NIP==1133){
             
-            return new Tarjeta(123123, 1133, "Eduardo Diaz Flores", 31, 12, 2032, 543,45987.22, 550);
+            return new Tarjeta(123123, 1133, "Eduardo Diaz Flores", 31, 12, 2032, 543,45987.22, 550,0);
             
             
         }else if(nCuenta == 456789 && NIP==3367){
             
             
-            return new Tarjeta(456789, 3367, "kevin meza Gonzalez", 31, 12, 2032, 544, 360, 5322.23);
+            return new Tarjeta(456789, 3367, "kevin meza Gonzalez", 31, 12, 2032, 544, 360, 5322.23,0);
             
             
         }else{
@@ -52,7 +55,7 @@ public class Tarjeta {
     }
     
     public  int validar(double a){
-        if(a> this.monto){
+        if(a > this.monto){
             
             return 0;
         }else{
@@ -67,16 +70,30 @@ public class Tarjeta {
     
     //Este metodo crear el apartado 
     public void crearapartado(double apartado){
+        if(this.apartado==0){
         this.monto =this.monto-apartado;
         this.apartado =this.apartado + apartado;
-    }
-    //Este metodo elemina el apartado
-    public void eliminarapartado(){
-        this.monto =this.monto+this.apartado;
-        this.apartado=this.apartado-this.apartado;
+        }else{
+        this.monto =this.monto-apartado;
+        this.apartado1 =this.apartado1 + apartado;
+        }
         
     }
+    
+
+  //Este metodo elemina el apartado
+    public void eliminarapartado(int x){
+        if(x ==1){
+        this.monto =this.monto+this.apartado;
+        this.apartado=this.apartado1;
+        this.apartado1=0;
+        }else{
+        this.monto =this.monto+this.apartado1;
+        this.apartado1=this.apartado1-this.apartado1;
+        }       
+    }
     //Este metodo realiza el deposito
+   
     public void deposito(double monto){
         this.monto +=monto;
     }
@@ -91,19 +108,16 @@ public class Tarjeta {
     //Este metodo calcula el total de la ceunta
     public double Total(){
         
-        return this.monto + this.apartado;
+        return this.monto + this.apartado + this.apartado1;
     }
     
     //Este metodo imprime los datos de la cuenta
     @Override
     public String toString() {
-        return "\n nocuenta:" + nocuenta + "\n nombre:" + nombre + "\n Fecha:"+ dia + "/" + mes + "/" + anio + "\n cv:" + cv + "\n monto:" + monto + "\n apartado:" + apartado+"\nTotal:"+this.Total();
+        return "\n nocuenta:" + nocuenta + "\n nombre:" + nombre + "\n Fecha:"+ dia + "/" + mes + "/" + anio + "\n cv:" + cv + "\n monto:" + monto + "\n apartado:" + apartado+"\n Segundo apartado:"+apartado1+"\nTotal:"+this.Total();
     }
 
-    int validarretiro() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+
    
     
 }

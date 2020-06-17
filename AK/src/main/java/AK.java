@@ -5,7 +5,7 @@ public class AK {
     int cargador;
     int precision;
     double velocidadCarga;
-    double preci;
+    double precio;
     int danio;
     double velocidadDisparo;
     
@@ -19,7 +19,7 @@ public class AK {
     }
     
     
-    public AK(String tipo, int cargador, int precision,double velocidadCarga, double precio,int danio, double velocidadDisparo  ){
+    public AK(String tipo, int cargador, int precision,double velocidadCarga, double precio, int danio, double velocidadDisparo  ){
         
         this.tipo=tipo;
         this.cargador=cargador;

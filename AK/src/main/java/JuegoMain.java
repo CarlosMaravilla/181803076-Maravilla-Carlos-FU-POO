@@ -53,5 +53,9 @@ public class JuegoMain {
          adamantium.danio=27;
          adamantium.velocidadDisparo=8;
          System.out.println(adamantium.toString());
+         
+         
+   
+       
      }
 }
